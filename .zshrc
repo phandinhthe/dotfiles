@@ -194,3 +194,23 @@ alias nvim="$NVIM"
 alias sqlc="$SQLC"
 alias goose="$GOOSE"
 alias neofetch="$NEOFETCH_HOME/neofetch"
+
+# use to colorize pager for `man`
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+#man 2 select
+
+# Highlighting --help messages
+# in your .bashrc/.zshrc/*rc
+alias bathelp='bat --plain --language=help'
+help() {
+    "$@" --help 2>&1 | bathelp
+}
+
+# add default catppuccin for FZF
+export FZF_DEFAULT_OPTS=" \
+--color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
+--color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
+--color=marker:#b4befe,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 \
+--color=selected-bg:#45475a \
+--multi"
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
