@@ -1,0 +1,130 @@
+" .ideavimrc is a configuration file for IdeaVim plugin. It uses
+"   the same commands as the original .vimrc configuration.
+" You can find a list of commands here: https://jb.gg/h38q75
+" Find more examples here: https://jb.gg/share-ideavimrc
+
+
+"" -- Suggested options --
+" Show a few lines of context around the cursor. Note that this makes the
+" text scroll if you mouse-click near the start or end of the window.
+set scrolloff=999
+set timeoutlen=300
+"" -- Let the increment works with alphabet characters
+""set nrformats+=alpha
+
+" Do incremental searching.
+set incsearch
+
+" Don't use Ex mode, use Q for formatting.
+map Q gq
+
+""set NERDTree
+set NERDTree
+
+""set ideamarks
+set ideamarks
+""increment alphabet
+set nrformats+=alpha
+" set <leader> to <space>
+let mapleader = " "
+
+" --- Enable IdeaVim plugins https://jb.gg/ideavim-plugins
+
+" Highlight copied text
+Plug 'machakann/vim-highlightedyank'
+" Commentary plugin
+Plug 'tpope/vim-commentary'
+" Surround text
+Plug 'tpope/vim-surround'
+" multiple cursors
+Plug 'terryma/vim-multiple-cursors'
+"let g:multi_cursor_start_word_key      = '<C-n>'
+"let g:multi_cursor_select_all_word_key = '<A-n>'
+"let g:multi_cursor_start_key           = 'g<C-n>'
+"let g:multi_cursor_select_all_key      = 'g<A-n>'
+"let g:multi_cursor_next_key            = '<C-n>'
+"let g:multi_cursor_prev_key            = '<C-p>'
+"let g:multi_cursor_skip_key            = '<C-x>'
+"let g:multi_cursor_quit_key            = '<Esc>'
+set multicursor
+"map mc <A-n>
+"map mx <A-x>
+"map mp <A-p>
+
+set relativenumber
+set clipboard+=unnamed
+set commentary
+set surround
+
+map gcc <Action>(CommentByLineComment)
+""imap <C-j> <Action>(EditorEscape)
+""vmap <C-j> <Action>(EditorEscape)
+""smap <C-j> <Action>(EditorEscape)
+
+"" -- Go to implementation method (Go to declare method -> gi)
+map gi <Action>(GotoImplementation)
+
+"" -- Go to usages.
+map gu <Action>(FindUsages)
+
+"" -- ActivateTerminalToolWindow -> go to terminal window -> should use option + f12
+map <C-\> <Action>(ActivateTerminalToolWindow)
+
+"" -- ToggleLineBreakpoint
+map <leader>lbp <Action>(ToggleLineBreakpoint)
+map <leader>dbg <Action>(Debug)
+map <leader>sdbg <Action>(Stop)
+
+"" --Run in intellij
+map <leader>run <Action>(Run)
+"" -- ExpandCollapseToggleAction toggle action expand/collapse use `zo`, `zc`, `zM`, `zR`
+""zo              Open one fold under the cursor.  When a count is given, that
+""                  many folds deep will be opened.  In Visual mode one level of
+""                  folds is opened for all lines in the selected area.
+""
+""                                                          *zc*
+""  zc              Close one fold under the cursor.  When a count is given, that
+""                  many folds deep are closed.  In Visual mode one level of folds
+""                  is closed for all lines in the selected area.
+""                  'foldenable' will be set.
+""
+""                                                          *zM*
+""  zM              Close all folds: set 'foldlevel' to 0.
+""                  'foldenable' will be set.
+""
+""                                                          *zR*
+""  zR              Open all folds.  This sets 'foldlevel' to highest fold level.
+
+"" -- ActivateProjectToolWindow open project window. (**P**roject **E**xplore) / NERDTree
+nnoremap <leader>nec :NERDTreeFocus<CR>
+nnoremap <leader>net :NERDTreeToggle<CR>
+
+map <leader>ff <Action>(FileStructurePopup)
+
+"" -- MethodDown/MethodUp Go to next/previous method
+map <leader>md <Action>(MethodDown)
+map <leader>mu <Action>(MethodUp)
+
+"" -- Find in Files
+map <leader>fip <Action>(FindInPath)
+
+"" -- Map IDE actions to IdeaVim -- https://jb.gg/abva4t
+nnoremap <C-j> <ESC>
+inoremap <C-j> <ESC>
+vnoremap <C-j> <ESC>
+snoremap <C-j> <ESC>
+cnoremap <C-j> <ESC>
+onoremap <C-j> <ESC>
+
+"" -- Move line up down
+vmap <A-J> <Action>(MoveLineDown)
+vmap <A-K> <Action>(MoveLineUp)
+
+
+"" Map \r to the Reformat Code action
+"map \r <Action>(ReformatCode)
+
+"" Map <leader>d to start debug
+"map <leader>d <Action>(Debug)
+"" Map \b to toggle the breakpoint on the current line
+"map \b <Action>(ToggleLineBreakpoint)

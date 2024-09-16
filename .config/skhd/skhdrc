@@ -1,0 +1,41 @@
+# Changing window focus
+
+cmd + ctrl - h : yabai -m window --focus west
+cmd + ctrl - j : yabai -m window --focus south
+cmd + ctrl - k : yabai -m window --focus north
+cmd + ctrl - l : yabai -m window --focus east
+
+
+#Swap window.
+cmd + shift - l : yabai -m window --swap east
+cmd + shift - j : yabai -m window --swap north
+cmd + shift - k : yabai -m window --swap south
+cmd + shift - h : yabai -m window --swap west
+
+cmd + shift - 1 : yabai -m window --space 1
+cmd + shift - 2 : yabai -m window --space 2
+cmd + shift - 3 : yabai -m window --space 3
+cmd + shift - 4 : yabai -m window --space 4
+cmd + shift - 5 : yabai -m window --space 5
+cmd + shift - 6 : yabai -m window --space 6
+cmd + shift - 7 : yabai -m window --space 7
+cmd + shift - 8 : yabai -m window --space 8
+
+#focus monitor display screen
+# cmd + ctrl - 0x27 : yabai -m display --focus next
+cmd + ctrl - 0x29 : yabai -m display --focus recent
+cmd + ctrl - 1 : yabai -m display --focus 1
+cmd + ctrl - 2 : yabai -m display --focus 2
+# cmd + ctrl + shift - j : yabai -m display --focus next
+# cmd + ctrl + shift - k : yabai -m display --focus prev
+
+cmd + ctrl - 0x2B : yabai -m window --resize left:-20:0
+cmd + ctrl - 0x2F: yabai -m window --resize right:20:0
+#move window to space.
+# cmd + ctrl - 1 : yabai -m window --space 1;
+# cmd + ctrl - 2 : yabai -m window --space 2;
+# Toogle window float
+shift + alt - t : yabai -m window --toggle float --grid 4:4:1:1:2:2
+
+# Maximize window
+shift + alt - f : yabai -m window --toggle zoom-fullscreen
