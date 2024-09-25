@@ -6,8 +6,11 @@ add_newline = true
 # [└─>](bold green) '''
 format = '''
 [┌───────────────────>](bold pink)
-[│](bold pink)$os $username$directory$java$package$git_branch$git_status$docker_context$time
+[│](bold pink)$os $username$directory$time
+[│](bold pink)${custom.java} $package $git_branch $git_status
+[│](bold pink)$kubernetes $azure$docker_context
 [└─> 🐼](bold pink) '''
+
 # Palette definitions
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
@@ -102,15 +105,39 @@ style = "bold fg:sky "
 format = '[$symbol ($version) 〉]($style)'
 
 [java]
+disabled = "false"
 symbol = " "
 style = "bold fg:sky "
 format = '[$symbol ($version) 〉]($style)'
 
+[custom.java]
+command = 'sh $HOME/starship_custom_java.sh'
+when = true
+style = "bold fg:red dimmed"
+symbol = " "
+format = '[$symbol ($output) 〉]($style)'
 
 [nodejs]
 symbol = ""
 style = "bold fg:sky "
 format = '[$symbol ($version) 〉]($style)'
+
+[azure]
+disabled = false
+symbol = '󰠅 '
+style = "bold fg:blue"
+format = '[$symbol($subscription) 〉]($style)'
+
+# ~/.config/starship.toml
+
+[kubernetes]
+disabled = false
+symbol = '☸ '
+style = 'bold fg:green'
+format = '[K8s ⛵(\[$context\])]($style)'
+contexts = [
+  { context_pattern = "dev.local.cluster.k8s", style = "green", symbol = "💔 " },
+]
 
 [nim]
 symbol = "󰆥 "
@@ -120,5 +147,5 @@ format = '[$symbol ($version) 〉]($style)'
 [time]
 disabled = false
 time_format = "%R" # Hour:Minute Format
-style = "bold fg:blue "
+style = "bold fg:cyan"
 format = '[ $time 〉]($style)'

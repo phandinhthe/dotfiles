@@ -4,6 +4,8 @@
 # ~/.zshrc starship
 # Check that the function `starship_zle-keymap-select()` is defined.
 # xref: https://github.com/starship/starship/issues/3418
+bindkey -v
+bindkey '^j' vi-cmd-mode
 export STARSHIP_CACHE=~/.starship/STARSHIP_CACHE
 type starship_zle-keymap-select >/dev/null || \
   {
@@ -110,6 +112,8 @@ plugins=(
   git
   git-prompt
 
+  docker
+  docker-compose
   aws
   brew
   branch
@@ -140,6 +144,7 @@ plugins=(
   node
   command-not-found
   z
+  zoxide
   zsh
   bash
   fzf
@@ -173,7 +178,7 @@ help() {
 export BAT_PAGING=always
 
 #eza for ls
-alias ls="eza --icons=always $@"
+alias ls="eza --icons=always --color=always $@"
 alias la="eza --icons=always --color=always -al"
 
 # add default catppuccin for FZF
@@ -189,11 +194,11 @@ source <(fzf --zsh)
 source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-# setup fo Z eval "$(zoxide init zsh)"
-eval "$(zoxide init zsh)"
 if type brew &>/dev/null; then
   FPATH=$(brew --prefix)/share/zsh-completions:$FPATH
 
   autoload -Uz compinit
   compinit
 fi
+# setup fo Z eval "$(zoxide init zsh)"
+eval "$(zoxide init zsh)"
