@@ -1,4 +1,4 @@
-
+#!/bin/sh
 
 function icon_map() {
   case "$1" in
@@ -481,3 +481,4 @@ function icon_map() {
     ;;
   esac
 }
+echo $icon_result

@@ -12,15 +12,15 @@ cmd + shift - j : yabai -m window --swap north
 cmd + shift - k : yabai -m window --swap south
 cmd + shift - h : yabai -m window --swap west
 
-cmd + shift - 1 : yabai -m window --space 1
-cmd + shift - 2 : yabai -m window --space 2
-cmd + shift - 3 : yabai -m window --space 3
-cmd + shift - 4 : yabai -m window --space 4
-cmd + shift - 5 : yabai -m window --space 5
-cmd + shift - 6 : yabai -m window --space 6
-cmd + shift - 7 : yabai -m window --space 7
-cmd + shift - 8 : yabai -m window --space 8
-
+cmd + shift - 1 : yabai -m window --space 1 --focus
+cmd + shift - 2 : yabai -m window --space 2 --focus
+cmd + shift - 3 : yabai -m window --space 3 --focus
+cmd + shift - 4 : yabai -m window --space 4 --focus
+cmd + shift - 5 : yabai -m window --space 5 --focus
+cmd + shift - 6 : yabai -m window --space 6 --focus
+cmd + shift - 7 : yabai -m window --space 7 --focus
+cmd + shift - 8 : yabai -m window --space 8 --focus
+cmd + shift - 9 : yabai -m window --space 9 --focus
 #focus monitor display screen
 # cmd + ctrl - 0x27 : yabai -m display --focus next
 cmd + ctrl - 0x29 : yabai -m display --focus recent
