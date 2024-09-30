@@ -1,7 +1,7 @@
 #!/bin/sh
 
 sketchybar --add item front_app left                                              \
-           --set front_app       background.color=$Rosewater                      \
+           --set front_app       background.color=$Green                     \
                                  background.padding_right=10                      \
                                  background.corner_radius=10                      \
                                                                                   \

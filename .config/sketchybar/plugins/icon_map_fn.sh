@@ -4,6 +4,9 @@ function icon_map() {
   "Typora")
     icon_result=":text:"
     ;;
+  "Desktop")
+    icon_result=":desktop:"
+    ;;
   "Orion" | "Orion RC")
     icon_result=":orion:"
     ;;

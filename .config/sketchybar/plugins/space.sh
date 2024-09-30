@@ -6,12 +6,12 @@
 source "$CONFIG_DIR/colors.sh"
 if [ $SELECTED = true ]; then
   sketchybar --set $NAME  background.drawing=on       \
-                          background.color=$Teal      \
+                          background.color=$Red      \
                           icon.color=$Mantle
 else
   sketchybar --set  $NAME background.drawing=on      \
-                          icon.color=$Teal \
-                          label.color=$Teal \
+                          icon.color=$Red \
+                          label.color=$Mantle \
                           background.color=$Mantle \
 
 fi

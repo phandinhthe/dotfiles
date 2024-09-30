@@ -43,6 +43,8 @@ ITEM_DIR="$CONFIG_DIR/items"
 ## - Left items.
 source $"$ITEM_DIR/front_app.sh"
 source $"$ITEM_DIR/space.sh"
+## display
+source $"$ITEM_DIR/display.sh"
 
 ## - Right items. source $"$ITEM_DIR/bar.sh"
 source $"$ITEM_DIR/default.sh"
@@ -53,7 +55,6 @@ source $"$ITEM_DIR/welcome.sh"
 
 ## - Center items.
 source $"$ITEM_DIR/media.sh"
-
 
 
 
