@@ -4,6 +4,7 @@
 # ~/.zshrc starship
 # Check that the function `starship_zle-keymap-select()` is defined.
 # xref: https://github.com/starship/starship/issues/3418
+EDITOR=nvim
 bindkey -v
 bindkey '^j' vi-cmd-mode
 export STARSHIP_CACHE=~/.starship/STARSHIP_CACHE
@@ -179,12 +180,14 @@ export BAT_PAGING=always
 
 #eza for ls
 alias ls="eza --icons=always --color=always $@"
-alias la="eza --icons=always --color=always -al"
+alias la="eza --icons=always --color=always -a $@"
+alias lt="eza --icons=always --color=always -a -T -L 2 $@"
+alias ll="eza --icons=always --color=always -al $@"
 
 # add default catppuccin for FZF
 export FZF_DEFAULT_OPTS=" \
 --color=bg+:#313244,spinner:#f5e0dc,hl:#f38ba8 \
---color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
+--color=fg:#a6e3a1,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
 --color=marker:#b4befe,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 \
 --color=selected-bg:#45475a \
 --multi --reverse"
