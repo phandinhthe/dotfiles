@@ -1,0 +1,38 @@
+# A TOML linter such as https://taplo.tamasfe.dev/ can use this schema to validate your config.
+# If you encounter any issues, please make an issue at https://github.com/yazi-rs/schemas.
+[manager]
+prepend_keymap = [
+	{ on = "<C-j>", run = "escape",             desc = "Exit visual mode, clear selected, or cancel search" },
+	{ on = "<C-Backspace>", run = "escape",             desc = "Exit visual mode, clear selected, or cancel search" },
+]
+
+[tasks]
+prepend_keymap = [
+	{ on = "<C-j>", run = "close", desc = "Close task manager" },
+	{ on = "<C-Backspace>", run = "close", desc = "Close task manager" },
+]
+
+[select]
+prepend_keymap = [
+	{ on = "<C-j>",   run = "close",          desc = "Cancel selection" },
+	{ on = "<C-Backspace>",   run = "close",          desc = "Cancel selection" },
+]
+
+[input]
+prepend_keymap = [
+	{ on = "<C-j>",   run = "escape",         desc = "Go back the normal mode, or cancel input" },
+	{ on = "<C-Backspace>",   run = "escape",         desc = "Go back the normal mode, or cancel input" },
+]
+
+[confirm]
+prepend_keymap = [
+	{ on = "<C-j>",   run = "close",          desc = "Cancel the confirm" },
+	{ on = "<C-Backspace>",   run = "close",          desc = "Cancel the confirm" },
+]
+
+
+[help]
+prepend_keymap = [
+	{ on = "<C-j>", run = "escape", desc = "Clear the filter, or hide the help" },
+	{ on = "<C-Backspace>", run = "escape", desc = "Clear the filter, or hide the help" },
+]
